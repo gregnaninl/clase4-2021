@@ -1,0 +1,33 @@
+
+    <div class="jumbotron">
+      <div class="container">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Genero</th>
+                  <th>Accion</th>
+                 
+                </tr>
+              </thead>
+            <tbody>
+              <tr *ngFor="let pelicula of listadoPeliculas" >
+                <td>{{ pelicula.nombre }} &nbsp;</td>
+                <td>{{ pelicula.tipo }} &nbsp;</td>
+                <td> <button class="btn btn-secondary" (click)="seleccioneUnaPelicula(pelicula)"> Seleccionar </button></td>
+                
+              </tr>
+            </tbody>
+          </table>
+       
+       <!--   <ul>
+            <li *ngFor="let pelicula of listadoPeliculas"  >
+                <span>{{ pelicula.nombre }}</span>
+             <button class="btn btn-secondary" (click)="seleccioneUnaPelicula(pelicula)"> Seleccionar </button>
+            </li>
+        </ul>-->
+
+
+       </div>
+    </div>
