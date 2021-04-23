@@ -8,14 +8,29 @@ import { ServicioPaisService } from 'src/app/servicios/servicio-pais.service';
 })
 export class PaisComponent implements OnInit {
 
-  pais;
-  paises$ : any;
+  lista : any;
+  listaPaises :object;
 
-  constructor( miHttp : ServicioPaisService) { 
-    
+  
+
+
+  constructor(private miHttp : ServicioPaisService) { 
+
   }
 
   ngOnInit(): void {
+  this.traerTodos();
   }
+
+  public traerTodos(){
+    this.miHttp.getTodosLosPaises().subscribe(
+    (res)=>{
+      this.listaPaises= res;
+        },
+    (error)=> console.log(error) 
+    ); 
+    }
+
+
 
 }

@@ -10,7 +10,7 @@ import { MenuComponent } from './general/page/menu/menu.component';
 import { TablaPeliculaComponent } from './general/componente/tabla-pelicula/tabla-pelicula.component';
 import { DetallePeliculaComponent } from './general/componente/detalle-pelicula/detalle-pelicula.component';
 import { AltaPeliculaComponent } from './general/componente/alta-pelicula/alta-pelicula.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AltaActoresComponent } from './general/page/alta-actores/alta-actores.component';
 import { ServicioPaisService } from './servicios/servicio-pais.service';
 import { PaisComponent } from './general/componente/pais/pais.component';
@@ -36,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [ServicioPaisService],

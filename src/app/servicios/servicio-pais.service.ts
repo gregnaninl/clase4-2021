@@ -12,8 +12,8 @@ export class ServicioPaisService {
 
 
   public getTodosLosPaises(){
-    return this.http.get('https://restcountries.eu/rest/v2/all');
-   // return this.http.get('https://restcountries.eu/rest/v2/name/argentina');
+  //  return this.http.get('https://restcountries.eu/rest/v2/all');
+   return this.http.get('https://restcountries.eu/rest/v2/name/united');
   }
 
   public taerPaisActor(pais:string){
