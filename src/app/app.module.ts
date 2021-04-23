@@ -11,6 +11,10 @@ import { TablaPeliculaComponent } from './general/componente/tabla-pelicula/tabl
 import { DetallePeliculaComponent } from './general/componente/detalle-pelicula/detalle-pelicula.component';
 import { AltaPeliculaComponent } from './general/componente/alta-pelicula/alta-pelicula.component';
 import { FormsModule } from '@angular/forms';
+import { AltaActoresComponent } from './general/page/alta-actores/alta-actores.component';
+import { ServicioPaisService } from './servicios/servicio-pais.service';
+import { PaisComponent } from './general/componente/pais/pais.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -23,15 +27,18 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     TablaPeliculaComponent,
     DetallePeliculaComponent,
-    AltaPeliculaComponent
+    AltaPeliculaComponent,
+    AltaActoresComponent,
+    PaisComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServicioPaisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
