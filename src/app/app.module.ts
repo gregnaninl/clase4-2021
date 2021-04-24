@@ -13,13 +13,21 @@ import { AltaPeliculaComponent } from './general/componente/alta-pelicula/alta-p
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AltaActoresComponent } from './general/page/alta-actores/alta-actores.component';
 import { ServicioPaisService } from './servicios/servicio-pais.service';
+import { ServicioActorService } from './servicios/servicio-actor.service';
 import { PaisComponent } from './general/componente/pais/pais.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { TablaActorComponent } from './general/componente/tabla-actor/tabla-actor.component';
+
+
+
 
 
 
 @NgModule({
-  declarations: [
+    declarations: [
     AppComponent,
     BienvenidosComponent,
     BusquedapeliculaComponent,
@@ -29,7 +37,11 @@ import { HttpClientModule } from '@angular/common/http';
     DetallePeliculaComponent,
     AltaPeliculaComponent,
     AltaActoresComponent,
-    PaisComponent
+    PaisComponent,
+    TablaActorComponent 
+   
+    
+   
     
   ],
   imports: [
@@ -37,9 +49,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [ServicioPaisService],
+  providers: [ServicioPaisService, AngularFirestore, ServicioActorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

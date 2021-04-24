@@ -1,6 +1,6 @@
 <h4 class="d-flex justify-content-between align-items-center mb-3">
-    <span class="text-muted">Your cart</span>
-    <span class="badge badge-secondary badge-pill">3</span>
+    <span class="text-muted">Paises</span>
+  
   </h4>
   <ul class="list-group mb-3">
     <li *ngFor="let lista  of listaPaises | slice:0:6; let i=index"   class="list-group-item d-flex justify-content-between lh-condensed"  >
@@ -9,7 +9,7 @@
        <img src={{lista.flag}} width="50" height="25">
       </div>
       <div class="input-group-append">
-        <button type="submit" class="btn btn-secondary">agregar</button>
+        <button type="submit" class="btn btn-secondary" (click)="GuardarPais(lista.name)">agregar</button>
       </div>
       
     </li>

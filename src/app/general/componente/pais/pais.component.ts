@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output ,EventEmitter} from '@angular/core';
 import { ServicioPaisService } from 'src/app/servicios/servicio-pais.service';
 
 @Component({
@@ -11,8 +11,8 @@ export class PaisComponent implements OnInit {
   lista : any;
   listaPaises :object;
 
-  
-
+  pais: string;
+  @Output() eventoCargarPais: EventEmitter<any>= new EventEmitter<any>();
 
   constructor(private miHttp : ServicioPaisService) { 
 
@@ -29,6 +29,12 @@ export class PaisComponent implements OnInit {
         },
     (error)=> console.log(error) 
     ); 
+    }
+
+    GuardarPais(nombre : string){
+      this.pais= nombre;
+      console.log(this.pais);
+      this.eventoCargarPais.emit(this.pais);  
     }
 
 
