@@ -20,6 +20,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { TablaActorComponent } from './general/componente/tabla-actor/tabla-actor.component';
+import { AltaComponent } from './general/page/peliculas/alta/alta.component';
+import { PeliculaAltaComponent } from './general/componente/pelicula-alta/pelicula-alta.component';
 
 
 
@@ -38,7 +40,9 @@ import { TablaActorComponent } from './general/componente/tabla-actor/tabla-acto
     AltaPeliculaComponent,
     AltaActoresComponent,
     PaisComponent,
-    TablaActorComponent 
+    TablaActorComponent,
+    AltaComponent,
+    PeliculaAltaComponent 
    
     
    
@@ -53,6 +57,11 @@ import { TablaActorComponent } from './general/componente/tabla-actor/tabla-acto
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [ServicioPaisService, AngularFirestore, ServicioActorService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    TablaActorComponent
+  ]
 })
-export class AppModule { }
+export class AppModule { 
+ 
+}

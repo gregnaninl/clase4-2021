@@ -1,4 +1,4 @@
-<h4 class="d-flex justify-content-between align-items-center mb-3">
+<!--<h4 class="d-flex justify-content-between align-items-center mb-3">
     <span class="text-muted">Actores</span>
   
   </h4>
@@ -17,5 +17,24 @@
      
     </li>
     
+  </ul>-->
+
+  <h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Actores</span>
+  
+  </h4>
+  <ul class="list-group mb-3">
+    <li *ngFor="let lista  of listadoActores | slice:0:6; let i=index"   class="list-group-item d-flex justify-content-between lh-condensed"  >
+      <div>
+        <p>Nombre: {{lista.nombre}}, {{lista.apellido}} </p>
+        <p>Pais: {{lista.pais}}</p>
+      </div>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-secondary" (click)="GuardarActor(lista)">agregar</button>
+      </div>
+      
+    </li>
+    
   </ul>
+
 

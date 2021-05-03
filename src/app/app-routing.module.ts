@@ -9,7 +9,8 @@ const routes: Routes = [
   {path: 'peliculas', component:BusquedapeliculaComponent},
   {path: 'bienvenidos', component:BienvenidosComponent},
   {path: 'actores', component:AltaActoresComponent},
-  {path: '', redirectTo:'peliculas',pathMatch: 'full'},  
+  {path: '', redirectTo:'peliculas',pathMatch: 'full'},
+  { path: 'peliculas', loadChildren: () => import('./peliculas/peliculas.module').then(m => m.PeliculasModule) },  
   {path: '**', component:PageNotFoundComponent}
   
 ];
