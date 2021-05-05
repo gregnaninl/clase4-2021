@@ -6,10 +6,11 @@ import { BusquedapeliculaComponent } from './general/page/busquedapelicula/busqu
 import { PageNotFoundComponent } from './general/page/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: 'peliculas', component:BusquedapeliculaComponent},
+  {path: 'buscar', component:BusquedapeliculaComponent},
   {path: 'bienvenidos', component:BienvenidosComponent},
   {path: 'actores', component:AltaActoresComponent},
-  {path: '', redirectTo:'peliculas',pathMatch: 'full'},  
+  {path: '', redirectTo:'buscar',pathMatch: 'full'},
+  { path: 'peliculas', loadChildren: () => import('./peliculas/peliculas.module').then(m => m.PeliculasModule) },  
   {path: '**', component:PageNotFoundComponent}
   
 ];
