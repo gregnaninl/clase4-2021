@@ -19,15 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-<<<<<<< HEAD
 import { TablaActorComponent } from './general/page/componente/tabla-actor/tabla-actor.component';
 import { AltaComponent } from './general/page/peliculas/alta/alta.component';
 import { PeliculaAltaComponent } from './general/page/componente/pelicula-alta/pelicula-alta.component';
-=======
-import { TablaActorComponent } from './general/componente/tabla-actor/tabla-actor.component';
-import { AltaComponent } from './general/page/peliculas/alta/alta.component';
-import { PeliculaAltaComponent } from './general/componente/pelicula-alta/pelicula-alta.component';
->>>>>>> 1ae1c20c144a0057f4ce94853cc818bc0d47639b
 
 
 
@@ -64,13 +58,7 @@ import { PeliculaAltaComponent } from './general/componente/pelicula-alta/pelicu
   ],
   providers: [ServicioPaisService, AngularFirestore, ServicioActorService],
   bootstrap: [AppComponent],
-<<<<<<< HEAD
   exports:[TablaActorComponent]
-=======
-  exports: [
-    TablaActorComponent
-  ]
->>>>>>> 1ae1c20c144a0057f4ce94853cc818bc0d47639b
 })
 export class AppModule { 
  
