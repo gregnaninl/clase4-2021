@@ -18,42 +18,53 @@
           </div>
           <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Alta Pelicula</h4>
-            <form  class="needs-validation"  [formGroup]= "formularioAlta"  >
-              <div class="row">
+            <form  class="needs-validation"  [formGroup]= "formularioAlta" (ngSubmit)= "GuardarPelicula()" >
+             
                 <div class="col-md-6 mb-3">
                   <label for="nombre">Nombre</label>
                   <input type="text" class="form-control" id="nombre" placeholder="" value="" formControlName='nombre'>
                   <small class="invalid" *ngIf="formularioAlta.get('nombre')?.errors?.required && formularioAlta.get('nombre').touched" >El nombre es requerido</small>
                 </div>
-                <div class="col-md-6 mb-3">
-                  <label for="apellido">Apellido</label>
-                  <input type="text" class="form-control" id="apellido" placeholder="" value="" formControlName='apellido'>
-                  <small class="invalid" *ngIf="formularioAlta.get('apellido')?.errors?.required && formularioAlta.get('apellido').touched" >El apellido es requerido</small>
-                </div>
+                
+                 
+              
+              <div class="col-md-6 mb-3">
+                <label for="tipo">Elegí el Tipo</label>
+                <select class="custom-select d-block w-100" id="tipo" name="tipo"  formControlName='tipo'>
+                  <option value="terrro">Terror</option>
+                  <option value="accion">Accion</option>
+                  <option value="ficcion">Ficcion</option>
+                  <option value="amor">Amor</option>
+                </select>
+                <small class="invalid" *ngIf="formularioAlta.get('tipo')?.errors?.required && formularioAlta.get('tipo')?.touched" >Tiene que elegir uno</small>
+              </div>  
+              <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label for="fecha">fecha de Estreno</label>
+                    <input type="date" class="form-control" id="fecha" placeholder="fecha" formControlName='fecha'>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label for="publico">Publico</label>
+                    <input type="number" class="form-control" id="publico" placeholder="cantidad" formControlName='publico'>
+                  </div>
               </div>
   
-  
-              <div class="mb-3">
-                <label for="email">Email <span class="text-muted">(Opcional)</span></label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com" formControlName='email'>
-                <small class="invalid" *ngIf="formularioAlta.get('email')?.errors?.required && formularioAlta.get('email').touched" >El email es requerido</small>
-              </div>
-  
-              <div class="mb-3">
-                <label for="direccion">Direccion</label>
-                <input type="text" class="form-control" id="direccion" placeholder="1234 Main St" formControlName='direccion'>
+              <div class="col-md-6 mb-3">
+                <label for="foto">Foto</label>
+                <input type="text" class="form-control" id="foto" placeholder="foto" formControlName='foto'>
                
               </div>
   
               
-              <div class="row">
-                <div class="col-md-5 mb-3">  
+             
+                <div class="col-md-6 mb-3">  
                   <label for="actor">Actor </label>
                   <input type="text" class="form-control" id="actor" placeholder="Actor" formControlName='actor'>
                   <small class="invalid" *ngIf="formularioAlta.get('actor')?.errors?.required && formularioAlta.get('actor').touched" >El Actor es requerido</small>
               </div>                             
                 
-              </div>
+            
              
                         
              

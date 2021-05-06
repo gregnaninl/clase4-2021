@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Actor } from 'src/app/clases/actor';
+import { Pais } from 'src/app/clases/pais';
 import { ServicioActorService } from 'src/app/servicios/servicio-actor.service';
 import Swal from 'sweetalert2';
 
@@ -16,9 +17,12 @@ export class AltaActoresComponent implements OnInit {
   public formularioAlta : FormGroup;
    
   public listadoActores :  Actor [];
+  public actorSeleccionado : Actor ;
   
 
-  constructor(  private fb: FormBuilder, private servActor : ServicioActorService) { }
+  constructor(  private fb: FormBuilder, private actorSvc : ServicioActorService) { 
+    this.actorSeleccionado  = new Actor;
+  }
 
   ngOnInit(): void {
   
@@ -34,34 +38,39 @@ export class AltaActoresComponent implements OnInit {
 
   }
 
-  public cargar(){
-    console.log(this.formularioAlta.get('nombre'));
-  }
+ 
   
-  public cargarPaisSleccionado(nombre :string){
-    this.formularioAlta.get('pais').setValue(nombre);
+  public cargarPaisSleccionado(pais :Pais){
+    this.formularioAlta.get('pais').setValue(pais.nombre);
+    this.actorSeleccionado.pais = pais;
   }
 
   
-  async GuardarActor(){
+   GuardarActor(){
 
-  if(this.formularioAlta.valid){
-    try {
-      const formValue = this.formularioAlta.value;
-      
-         await  this.servActor.GuardarActor(formValue );
-          //ok
-         Swal.fire('Mensaje Enviado', 'Todo subio correctamente!!','success');
-         this.formularioAlta.reset();
-        
-        } catch (error) {
-      console.log(error);
-      Swal.fire('Algo Salio Mal!','Revisa el contenido del formulario','error');
-
-        }
+    if(this.formularioAlta.valid){  
+      this.cargarActor();
+      try{
+     // this.actorSvc.GuardarActor(this.actorSeleccionado);
+      //this.formularioAlta.reset();
+      console.info(this.actorSeleccionado);
+      //ok
+     // Swal.fire('pelicula Enviada','Todo subio correctamente!!','success'); 
+      }
+      catch(e){
+        console.log(e);
+        Swal.fire('Algo Salio Mal!',e,'error');  
+      }
+    }
   }
-  }
 
+  private cargarActor(){
+    this.actorSeleccionado.nombre = this.formularioAlta.get('nombre').value;
+    this.actorSeleccionado.apellido = this.formularioAlta.get('apellido').value;
+    this.actorSeleccionado.email = this.formularioAlta.get('email').value;
+    this.actorSeleccionado.direccion = this.formularioAlta.get('direccion').value;
+
+  }
     
   
 

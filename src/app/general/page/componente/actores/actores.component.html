@@ -1,0 +1,28 @@
+<div class="jumbotron">
+    <div class="container">
+
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>apellido</th>
+                <th>Peliculas</th>
+                <th>Pais</th>
+                <th>Detalle</th>
+               
+              </tr>
+            </thead>
+          <tbody>
+            <tr *ngFor="let actor of listadoActores" >
+              <td>{{ actor.nombre }} &nbsp;</td>
+              <td>{{ actor.apellido }} &nbsp;</td>
+              <td> <button class="btn btn-secondary" (click)="verPeliculas(actor)"> ver </button></td>
+              <td> <button class="btn btn-secondary" (click)="VerPais(actor)"> ver </button></td>
+              <td> <button class="btn btn-secondary" (click)="verTodo(actor)"> ver </button></td>
+            </tr>
+          </tbody>
+        </table>
+     
+   </div>
+  </div>
+

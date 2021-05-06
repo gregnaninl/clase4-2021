@@ -22,6 +22,11 @@ import { environment } from 'src/environments/environment';
 import { TablaActorComponent } from './general/page/componente/tabla-actor/tabla-actor.component';
 import { AltaComponent } from './general/page/peliculas/alta/alta.component';
 import { PeliculaAltaComponent } from './general/page/componente/pelicula-alta/pelicula-alta.component';
+import { ActorpeliculaComponent } from './general/page/actor/actorpelicula/actorpelicula.component';
+import { ActoresComponent } from './general/page/componente/actores/actores.component';
+import { TablaPeliculasActorComponent } from './general/page/componente/tabla-peliculas-actor/tabla-peliculas-actor.component';
+import { TablaPaisActorComponent } from './general/page/componente/tabla-pais-actor/tabla-pais-actor.component';
+import { TablaDetalleActorComponent } from './general/page/componente/tabla-detalle-actor/tabla-detalle-actor.component';
 
 
 
@@ -42,7 +47,12 @@ import { PeliculaAltaComponent } from './general/page/componente/pelicula-alta/p
     PaisComponent,
     TablaActorComponent,
     AltaComponent,
-    PeliculaAltaComponent 
+    PeliculaAltaComponent,
+    ActorpeliculaComponent,
+    ActoresComponent,
+    TablaPeliculasActorComponent,
+    TablaPaisActorComponent,
+    TablaDetalleActorComponent 
    
     
    

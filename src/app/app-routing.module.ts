@@ -10,7 +10,8 @@ const routes: Routes = [
   {path: 'bienvenidos', component:BienvenidosComponent},
   {path: 'actores', component:AltaActoresComponent},
   {path: '', redirectTo:'buscar',pathMatch: 'full'},
-  { path: 'peliculas', loadChildren: () => import('./peliculas/peliculas.module').then(m => m.PeliculasModule) },  
+  { path: 'peliculas', loadChildren: () => import('./peliculas/peliculas.module').then(m => m.PeliculasModule) },
+  { path: 'actores', loadChildren: () => import('./actores/actores.module').then(m => m.ActoresModule) },  
   {path: '**', component:PageNotFoundComponent}
   
 ];
