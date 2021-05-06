@@ -26,7 +26,7 @@ export class ActoresComponent implements OnInit {
   }
 
    private verTodo(actor: Actor){
-    //console.info("pelicula",Movies);
+   console.info(actor);
     this.eventoActorSeleccionado.emit(actor);
   }
 

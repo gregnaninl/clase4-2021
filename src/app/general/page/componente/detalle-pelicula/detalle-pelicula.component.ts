@@ -11,9 +11,6 @@ export class DetallePeliculaComponent implements OnInit {
   @Input() peliculaParaMostrar : Movies;
 
   constructor() { 
-    //this.peliculaParaMostrar = new Movies();
-   // this.peliculaParaMostrar.nombre ="Tu vieja en tangas";
-    //this.peliculaParaMostrar.fehcaEstreno ="10-12-2020"
   }
 
   ngOnInit(): void {

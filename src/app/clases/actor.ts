@@ -8,5 +8,5 @@ export class Actor {
     direccion!: string;
     email: string;
     pais : Pais = new Pais;
-    //pais: string;
+    //pais: string; 
 }

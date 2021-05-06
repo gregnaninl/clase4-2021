@@ -40,9 +40,16 @@ export class AltaActoresComponent implements OnInit {
 
  
   
-  public cargarPaisSleccionado(pais :Pais){
-    this.formularioAlta.get('pais').setValue(pais.nombre);
-    this.actorSeleccionado.pais = pais;
+  public cargarPaisSleccionado(pais :any){
+    this.formularioAlta.get('pais').setValue(pais.name);
+    const paisActor = {
+      nombre:pais.name,
+      bandera: pais.flag,
+      region: pais.region
+    };
+    console.log(paisActor),
+    
+    this.actorSeleccionado.pais = paisActor;
   }
 
   
@@ -51,11 +58,11 @@ export class AltaActoresComponent implements OnInit {
     if(this.formularioAlta.valid){  
       this.cargarActor();
       try{
-     // this.actorSvc.GuardarActor(this.actorSeleccionado);
-      //this.formularioAlta.reset();
-      console.info(this.actorSeleccionado);
+      this.actorSvc.GuardarActor(this.actorSeleccionado);
+      this.formularioAlta.reset();
+      //console.info(this.actorSeleccionado);
       //ok
-     // Swal.fire('pelicula Enviada','Todo subio correctamente!!','success'); 
+      Swal.fire('pelicula Enviada','Todo subio correctamente!!','success'); 
       }
       catch(e){
         console.log(e);

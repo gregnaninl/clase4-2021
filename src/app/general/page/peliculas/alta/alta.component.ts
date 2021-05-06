@@ -48,6 +48,7 @@ export class AltaComponent implements OnInit {
       this.cargarPelicula();
       try{
       this.peliculaSvc.GuardarPelicula(this.peliculaNueva);
+      console.info(this.peliculaNueva);
       this.formularioAlta.reset();
       //ok
       Swal.fire('pelicula Enviada','Todo subio correctamente!!','success'); 

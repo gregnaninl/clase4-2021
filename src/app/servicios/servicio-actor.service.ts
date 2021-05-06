@@ -29,8 +29,7 @@ export class ServicioActorService {
         const result = this.actorCollection.doc(id).set(data);
         resolve(result);
       } catch (error) {
-        console.log(error);
-        
+        console.log(error);        
         reject(error.message);
       }
     });

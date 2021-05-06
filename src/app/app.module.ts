@@ -27,6 +27,8 @@ import { ActoresComponent } from './general/page/componente/actores/actores.comp
 import { TablaPeliculasActorComponent } from './general/page/componente/tabla-peliculas-actor/tabla-peliculas-actor.component';
 import { TablaPaisActorComponent } from './general/page/componente/tabla-pais-actor/tabla-pais-actor.component';
 import { TablaDetalleActorComponent } from './general/page/componente/tabla-detalle-actor/tabla-detalle-actor.component';
+import { DetallePaisComponent } from './general/page/componente/detalle-pais/detalle-pais.component';
+import { DetalleActorComponent } from './general/page/componente/detalle-actor/detalle-actor.component';
 
 
 
@@ -52,7 +54,9 @@ import { TablaDetalleActorComponent } from './general/page/componente/tabla-deta
     ActoresComponent,
     TablaPeliculasActorComponent,
     TablaPaisActorComponent,
-    TablaDetalleActorComponent 
+    TablaDetalleActorComponent,
+    DetallePaisComponent,
+    DetalleActorComponent 
    
     
    

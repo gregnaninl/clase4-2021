@@ -3,23 +3,36 @@
     <br>
 
     <app-actores
+    (eventoActorSeleccionado)="CargarActor($event)"
     >  
     </app-actores>
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
-            <h2>Peliculas</h2>
+        <div class="col-md-4">          
+         <!-- listado de peliculas por Actor-->
+        <app-tabla-peliculas-actor            
+            [peliculas]="listadoPeliculas">            
+        </app-tabla-peliculas-actor>-
+
+          
+            
          
          </div>
         <div class="col-md-4">
-            <h2>Pais</h2>
+        <!-- listado de peliculas por Actor-->
+        <app-detalle-pais
+          [paisParaMostrar] = "paisActor">
+        </app-detalle-pais>
         
         
       </div>
 
         <div class="col-md-4">
-          <h2>Detalles Actor</h2>
+         <!-- detalles de Actor-->
+         <app-detalle-actor
+          [actorParaMostrar]="ActorElegido" >
+        </app-detalle-actor>
        
           
                 
