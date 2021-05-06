@@ -62,7 +62,7 @@ export class AltaActoresComponent implements OnInit {
       this.formularioAlta.reset();
       //console.info(this.actorSeleccionado);
       //ok
-      Swal.fire('pelicula Enviada','Todo subio correctamente!!','success'); 
+      Swal.fire('Actor Enviado','Todo subio correctamente!!','success'); 
       }
       catch(e){
         console.log(e);

@@ -14,7 +14,7 @@ export class TablaPeliculaComponent implements OnInit {
   constructor() { }
 
   seleccioneUnaPelicula(pelicula:Movies){
-    console.info("pelicula",Movies);
+   // console.info("pelicula",Movies);
     this.eventoPeliculaSeleccionada.emit(pelicula);
   }
 

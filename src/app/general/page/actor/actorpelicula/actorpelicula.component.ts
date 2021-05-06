@@ -11,7 +11,8 @@ import { PeliculasService } from 'src/app/servicios/peliculas.service';
 })
 export class ActorpeliculaComponent implements OnInit {
 
-  public ActorElegido : Actor;
+  public ActorElegido :Actor;
+  public listaActor : Actor[];
   
   public listadoPeliculas : Peliculas[];
 
@@ -35,8 +36,10 @@ export class ActorpeliculaComponent implements OnInit {
   
 
   public CargarActor(actor : Actor){
-    this.listadoPeliculas = new Array();    
-        this.ActorElegido = actor;
+    this.listadoPeliculas = new Array();  
+    this.listaActor = new Array(); 
+    this.ActorElegido = actor; 
+        this.listaActor.push(actor);
         this.paisActor= actor.pais;
         this.peliculaSvc.traerTodos().valueChanges().subscribe(
           (res)=>{            

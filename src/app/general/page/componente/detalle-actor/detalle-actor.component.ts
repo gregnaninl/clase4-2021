@@ -8,7 +8,7 @@ import { Actor } from 'src/app/clases/actor';
 })
 export class DetalleActorComponent implements OnInit {
 
-  @Input() actorParaMostrar: Actor;
+  @Input() actorParaMostrar: Actor [];
 
   constructor() { }
 

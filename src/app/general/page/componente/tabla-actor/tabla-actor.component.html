@@ -5,7 +5,7 @@
   
   </h4>
   <ul class="countries-container  list-group mb-3">
-    <li *ngFor="let lista  of listadoActores | slice:0:6; let i=index"   class="list-group-item d-flex justify-content-between lh-condensed"  >
+    <li *ngFor="let lista  of listadoActores "   class="list-group-item d-flex justify-content-between lh-condensed"  >
       <div>
         <p>Nombre: {{lista.nombre}}, {{lista.apellido}} </p>
         <p>Pais: {{lista.pais.nombre}}</p>

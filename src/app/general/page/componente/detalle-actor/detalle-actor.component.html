@@ -1,8 +1,8 @@
 <h2>Detalle Actor</h2>
-<div *ngIf= "actorParaMostrar" >
-  <p>Nombre: {{ actorParaMostrar.nombre}}</p>
-  <p>Apellido: {{ actorParaMostrar.apellido}}</p>
-  <p>email: {{ actorParaMostrar.email}}</p>
+<div *ngFor= " let actor of actorParaMostrar" >
+  <p>Nombre: {{ actor.nombre}}</p>
+  <p>Apellido: {{ actor.apellido}}</p>
+  <p>email: {{ actor.email}}</p>
   <p *ngIf="actorParaMostrar.direccion ">
-      direccion: {{ actorParaMostrar.direccion}}</p>
+      direccion: {{ actor.direccion}}</p>
   </div>

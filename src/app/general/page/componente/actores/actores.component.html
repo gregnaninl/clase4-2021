@@ -6,8 +6,8 @@
               <tr>
                 <th>Nombre</th>
                 <th>apellido</th>
-                <th>Peliculas</th>
-                <th>Pais</th>
+                <!--<th>Peliculas</th>
+                <th>Pais</th>-->
                 <th>Detalle</th>
                
               </tr>
@@ -16,8 +16,8 @@
             <tr *ngFor="let actor of listadoActores" >
               <td>{{ actor.nombre }} &nbsp;</td>
               <td>{{ actor.apellido }} &nbsp;</td>
-              <td> <button class="btn btn-secondary" (click)="verPeliculas(actor)"> ver </button></td>
-              <td> <button class="btn btn-secondary" (click)="VerPais(actor)"> ver </button></td>
+            <!--  <td> <button class="btn btn-secondary" (click)="verPeliculas(actor)"> ver </button></td>
+              <td> <button class="btn btn-secondary" (click)="VerPais(actor)"> ver </button></td>-->
               <td> <button class="btn btn-secondary" (click)="verTodo(actor)"> ver </button></td>
             </tr>
           </tbody>
